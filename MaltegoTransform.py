@@ -159,6 +159,9 @@ class MaltegoTransform(object):
 		print "</MaltegoMessage>"
 		exit()
 
+	def getOutput(self):
+		return map(lambda x: x.getProps(), self.entities)
+
 	def returnOutput(self):
 		print "<MaltegoMessage>"
 		print "<MaltegoTransformResponseMessage>"
