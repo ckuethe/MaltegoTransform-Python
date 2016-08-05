@@ -52,8 +52,34 @@ class MaltegoEntity(object):
 		self.additionalFields.append([sanitise(fieldName),sanitise(displayName),matchingRule,sanitise(value)])
 
 	def setIconURL(self,iU=None):
-		if (iU is not None):
 			self.iconURL = iU
+
+	def getType(self):
+		return self.entityType
+
+	def getValue(self):
+		return self.value
+
+	def getWeight(self):
+		return self.weight
+
+	def getDisplayInformation(self):
+		return self.displayInformation
+
+	def getAdditionalFields(self):
+		return self.additionalFields
+
+	def getIconURL(self):
+		return self.iconURL
+
+	def getProps(self):
+		return {'type': self.getType(),
+			'value': self.getValue(),
+			'weight': self.getWeight(),
+			'displayInforation': self.getDisplayInformation(),
+			'additionalFields': self.getAdditionalFields(),
+			'iconURL': self.getIconURL(),
+			}
 
 	def returnEntity(self):
 		print "<Entity Type=\"" + str(self.entityType) + "\">"
